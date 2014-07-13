@@ -1,5 +1,5 @@
 etc_issue() {
-  new_issue=$p/deps/etc_issue/issue
+  new_issue=$p/etc_issue/issue
 
   is_met() {
     diff $new_issue /etc/issue

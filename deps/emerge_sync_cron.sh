@@ -1,5 +1,5 @@
 emerge_sync_cron() {
-  new_crontab=$p/deps/emerge_sync_cron/crontab
+  new_crontab=$p/emerge_sync_cron/crontab
   old_crontab=/etc/cron.d/portage
 
   is_met() {
