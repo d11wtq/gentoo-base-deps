@@ -24,16 +24,7 @@ kernel_config() {
       --bootloader=grub2 \
       all
 
-    rebuild_vbox_guest_additions
-  }
-
-  rebuild_vbox_guest_additions() {
-    version=4.3.12
-    package=app-emulation/virtualbox-guest-additions
-
-    echolog "Emerging virtualbox-guest-additions"
-    sudo emerge =$package-$version --autounmask-write
-    sudo etc-update --automode -5
-    sudo emerge =$package-$version
+    echolog "Rebuilding kernel modules"
+    sudo emerge -1 @module-rebuild
   }
 }
