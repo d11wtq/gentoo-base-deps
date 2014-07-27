@@ -1,11 +1,16 @@
 hostname() {
-  name="gentoo"
+  if [[ -z $PROVISION_HOSTNAME ]]
+  then
+    PROVISION_HOSTNAME=gentoo
+  fi
+
+  name=$PROVISION_HOSTNAME
 
   startup() {
     file=/etc/conf.d/hostname
 
     is_met() {
-      [[ `hostname` = gentoo ]]
+      [[ `hostname` = $name ]]
     }
 
     meet() {
