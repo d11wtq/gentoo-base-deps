@@ -20,13 +20,7 @@ docker() {
   }
 
   groups() {
-    is_met() {
-      [[ `groups vagrant` =~ docker ]]
-    }
-
-    meet() {
-      sudo usermod -aG docker vagrant
-    }
+    require group docker
   }
 
   require installed

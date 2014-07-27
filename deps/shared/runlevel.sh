@@ -3,6 +3,8 @@ runlevel() {
   service=$1
   runlevel=$2
 
+  echolog "$@"
+
   is_met() {
     sudo rc-status $runlevel | grep $service
   }
