@@ -1,4 +1,6 @@
 base() {
+  require bash
+  require bashrc
   require locale
   require portage
   require kernel_config
@@ -11,5 +13,4 @@ base() {
   require emerge_sync_cron
   require git
   require vim
-  require bashrc
 }
