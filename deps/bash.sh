@@ -1,13 +1,14 @@
 bash() {
-  pkg_ver=4.2_p49
+  pkg_patch=52
+  pkg_ver=4.2
   pkg_name=app-shells/bash
 
   is_met() {
-    bash --version | grep $(echo $pkg_ver | sed s/_p/./)
+    bash --version | grep ${pkg_ver}.${pkg_patch}
   }
 
   meet() {
     echolog "Emerging bash"
-    sudo emerge =app-shells/bash-$pkg_ver
+    sudo emerge =app-shells/bash-${pkg_ver}_p${pkg_patch}
   }
 }
