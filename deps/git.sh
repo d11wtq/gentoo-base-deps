@@ -27,6 +27,7 @@ git() {
       }
 
       meet() {
+        sudo mkdir -p /usr/local/bin
         sudo cp -f $script /usr/local/bin/
       }
     }
