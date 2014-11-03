@@ -1,6 +1,19 @@
 kernel_sources() {
-  kernel_ver=3.15.5
-  kernel_src=/usr/src/linux-$kernel_ver-aufs
+  kernel_ver=3.12.21
+  pkg_rev=r1
+  kernel_src=/usr/src/linux-$kernel_ver-aufs-$pkg_rev
+
+  available() {
+    echolog "Checking =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev"
+
+    is_met() {
+      equery which =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev
+    }
+
+    meet() {
+      true
+    }
+  }
 
   installed() {
     is_met() {
@@ -9,9 +22,9 @@ kernel_sources() {
 
     meet() {
       echolog "Emerging aufs-sources"
-      sudo emerge =sys-kernel/aufs-sources-$kernel_ver --autounmask-write
+      sudo emerge =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev --autounmask-write
       sudo etc-update --automode -5
-      sudo emerge =sys-kernel/aufs-sources-$kernel_ver
+      sudo emerge =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev
     }
   }
 
@@ -25,6 +38,7 @@ kernel_sources() {
     }
   }
 
+  require available
   require installed
   require symlinked
 }
