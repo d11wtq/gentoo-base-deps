@@ -5,7 +5,7 @@ cron() {
     }
 
     meet() {
-      echolog "Emerging dcron"
+      log "Emerging dcron"
       sudo emerge sys-process/dcron
     }
   }

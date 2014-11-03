@@ -8,7 +8,7 @@ bash() {
   }
 
   meet() {
-    echolog "Emerging bash"
+    log "Emerging bash"
     sudo emerge =app-shells/bash-${pkg_ver}_p${pkg_patch}
   }
 }

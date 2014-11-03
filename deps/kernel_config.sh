@@ -12,10 +12,10 @@ kernel_config() {
   }
 
   meet() {
-    echolog "Purging existing kernels"
+    log "Purging existing kernels"
     sudo eclean-kernel -a -d -x build
 
-    echolog "Recompiling linux kernel"
+    log "Recompiling linux kernel"
     sudo cp -f $new_config /usr/src/linux/.config
     sudo genkernel \
       --install \
@@ -24,7 +24,7 @@ kernel_config() {
       --bootloader=grub2 \
       all
 
-    echolog "Rebuilding kernel modules"
+    log "Rebuilding kernel modules"
     sudo emerge -1 @module-rebuild
   }
 }

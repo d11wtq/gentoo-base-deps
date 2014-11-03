@@ -4,7 +4,7 @@ gentoolkit() {
   }
 
   meet() {
-    echolog "Emerging gentoolkit"
+    log "Emerging gentoolkit"
     sudo emerge app-portage/gentoolkit
   }
 }

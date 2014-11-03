@@ -5,7 +5,7 @@ portage() {
     }
 
     meet() {
-      echolog "Initializing portage tree"
+      log "Initializing portage tree"
       sudo emerge-webrsync
     }
   }
@@ -23,7 +23,7 @@ portage() {
     }
 
     meet() {
-      echolog "Syncing portage tree"
+      log "Syncing portage tree"
       sudo emerge --sync
     }
   }

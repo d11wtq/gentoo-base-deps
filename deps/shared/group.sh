@@ -7,7 +7,7 @@ group() {
     uid=$(whoami)
   fi
 
-  echolog "$@"
+  log "$@"
 
   is_met() {
     [[ `groups $uid` =~ $gid ]]

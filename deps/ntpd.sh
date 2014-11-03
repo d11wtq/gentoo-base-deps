@@ -5,7 +5,7 @@ ntpd() {
     }
 
     meet() {
-      echolog "Emerging ntp"
+      log "Emerging ntp"
       sudo emerge net-misc/ntp
     }
   }

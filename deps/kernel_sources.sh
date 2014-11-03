@@ -4,7 +4,7 @@ kernel_sources() {
   kernel_src=/usr/src/linux-$kernel_ver-aufs-$pkg_rev
 
   available() {
-    echolog "Checking =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev"
+    log "Checking =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev"
 
     is_met() {
       equery which =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev
@@ -21,7 +21,7 @@ kernel_sources() {
     }
 
     meet() {
-      echolog "Emerging aufs-sources"
+      log "Emerging aufs-sources"
       sudo emerge =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev --autounmask-write
       sudo etc-update --automode -5
       sudo emerge =sys-kernel/aufs-sources-$kernel_ver-$pkg_rev

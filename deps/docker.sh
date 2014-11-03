@@ -8,7 +8,7 @@ docker() {
     }
 
     meet() {
-      echolog "Emerging docker"
+      log "Emerging docker"
       sudo USE=aufs emerge =$pkg_name-$pkg_ver --autounmask-write
       sudo etc-update --automode -5
       sudo USE=aufs emerge =$pkg_name-$pkg_ver

@@ -4,7 +4,7 @@ genkernel() {
   }
 
   meet() {
-    echolog "Emerging genkernel"
+    log "Emerging genkernel"
     sudo emerge sys-kernel/genkernel
   }
 }
