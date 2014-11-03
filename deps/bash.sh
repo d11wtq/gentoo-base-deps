@@ -1,5 +1,5 @@
 bash() {
-  pkg_patch=52
+  pkg_patch=53
   pkg_ver=4.2
   pkg_name=app-shells/bash
 
