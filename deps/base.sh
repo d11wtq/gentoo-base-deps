@@ -1,10 +1,10 @@
 base() {
-  require bash
   require bashrc
   require locale
   require portage
-  require kernel_config
+  require bash
   require gentoolkit
+  require kernel_config
   require ntpd
   require docker
   require etc_issue
