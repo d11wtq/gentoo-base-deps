@@ -6,6 +6,18 @@ then
   return
 fi
 
+# path to .bashrc.d files
+rc_dir=~/.bashrc.d
+
+# load other .bashrc files
+if [[ -d $rc_dir ]]
+then
+  for rc in $(ls $rc_dir)
+  do
+    source $rc_dir/$rc
+  done
+fi
+
 # prevent insanity
 export EDITOR=vim
 
